@@ -1,0 +1,309 @@
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-76678346-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-76678346-2');
+</script>
+
+<script src="http://www.google.com/jsapi" type="text/javascript"></script>
+<script type="text/javascript">google.load("jquery", "1.3.2");</script>
+
+<style type="text/css">
+    body {
+        font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+        font-weight:300;
+        font-size:18px;
+        margin-left: auto;
+        margin-right: auto;
+        width: 1100px;
+    }
+
+    h1 {
+        font-weight:300;
+    }
+
+    .disclaimerbox {
+        background-color: #eee;
+        border: 1px solid #eeeeee;
+        border-radius: 10px ;
+        -moz-border-radius: 10px ;
+        -webkit-border-radius: 10px ;
+        padding: 20px;
+    }
+
+    video.header-vid {
+        height: 140px;
+        border: 1px solid black;
+        border-radius: 10px ;
+        -moz-border-radius: 10px ;
+        -webkit-border-radius: 10px ;
+    }
+
+    img.header-img {
+        height: 140px;
+        border: 1px solid black;
+        border-radius: 10px ;
+        -moz-border-radius: 10px ;
+        -webkit-border-radius: 10px ;
+    }
+
+    img.rounded {
+        border: 1px solid #eeeeee;
+        border-radius: 10px ;
+        -moz-border-radius: 10px ;
+        -webkit-border-radius: 10px ;
+    }
+
+    a:link,a:visited
+    {
+        color: #1367a7;
+        text-decoration: none;
+    }
+    a:hover {
+        color: #208799;
+    }
+
+    td.dl-link {
+        height: 160px;
+        text-align: center;
+        font-size: 22px;
+    }
+
+    .layered-paper-big { /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
+        box-shadow:
+                0px 0px 1px 1px rgba(0,0,0,0.35), /* The top layer shadow */
+                5px 5px 0 0px #fff, /* The second layer */
+                5px 5px 1px 1px rgba(0,0,0,0.35), /* The second layer shadow */
+                10px 10px 0 0px #fff, /* The third layer */
+                10px 10px 1px 1px rgba(0,0,0,0.35), /* The third layer shadow */
+                15px 15px 0 0px #fff, /* The fourth layer */
+                15px 15px 1px 1px rgba(0,0,0,0.35), /* The fourth layer shadow */
+                20px 20px 0 0px #fff, /* The fifth layer */
+                20px 20px 1px 1px rgba(0,0,0,0.35), /* The fifth layer shadow */
+                25px 25px 0 0px #fff, /* The fifth layer */
+                25px 25px 1px 1px rgba(0,0,0,0.35); /* The fifth layer shadow */
+        margin-left: 10px;
+        margin-right: 45px;
+    }
+
+
+    .layered-paper { /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
+        box-shadow:
+                0px 0px 1px 1px rgba(0,0,0,0.35), /* The top layer shadow */
+                5px 5px 0 0px #fff, /* The second layer */
+                5px 5px 1px 1px rgba(0,0,0,0.35), /* The second layer shadow */
+                10px 10px 0 0px #fff, /* The third layer */
+                10px 10px 1px 1px rgba(0,0,0,0.35); /* The third layer shadow */
+        margin-top: 5px;
+        margin-left: 10px;
+        margin-right: 30px;
+        margin-bottom: 5px;
+    }
+
+    .vert-cent {
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    hr
+    {
+        border: 0;
+        height: 1.5px;
+        background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+    }
+</style>
+
+<html>
+  <head>
+        <title>Learning Unsupervised Multi-View Stereopsis via Robust Photometric Consistency</title>
+        <meta property="og:title" content="MVS" />
+        <meta property="og:image" content="https://tejaskhot.github.io/unsup_mvs/resources/images/teaser.png" />
+        <!-- <meta property="og:url" content="https://www.youtube.com/watch?v=cYHQKtBLI3Q" /> -->
+  </head>
+
+  <body>
+    <br>
+    <center>
+    <span style="font-size:42px">Learning Unsupervised Multi-View Stereopsis <br> via Robust Photometric Consistency</span>
+
+    </center>
+
+    <br><br>
+      <table align=center width=800px>
+       <tr>
+         <td align=center width=100px>
+         <center>
+         <span style="font-size:20px"><a href="https://tejaskhot.github.io/">Tejas Khot<sup>*</sup><sup>1</sup></a></span>
+         </center>
+         </td>
+
+        <td align=center width=100px>
+        <center>
+        <span style="font-size:20px"><a href="https://scholar.google.com/citations?user=vG1Oa2kAAAAJ&hl=en">Shubham Agrawal<sup>*</sup><sup>1</sup></a></span>
+        </center>
+        </td>
+
+        <td align=center width=100px>
+        <center>
+        <span style="font-size:20px"><a href="https://shubhtuls.github.io/">Shubham Tulsiani<sup>2</sup></a></span>
+        </center>
+        </td>
+
+        <td align=center width=100px>
+        <center>
+        <span style="font-size:20px"><a href="https://www.ri.cmu.edu/ri-people/christoph-mertz/">Christoph Mertz<sup>1</sup></a></span>
+        </center>
+        </td>
+
+        <td align=center width=100px>
+        <center>
+        <span style="font-size:20px"><a href="https://www.ri.cmu.edu/ri-faculty/simon-lucey/">Simon Lucey<sup>1</sup></a></span>
+        </center>
+        </td>
+
+        <td align=center width=100px>
+        <center>
+        <span style="font-size:20px"><a href="https://www.cs.cmu.edu/~hebert/">Martial Hebert<sup>1</sup></a></span>
+        </center>
+        </td>
+     </tr>
+    </table>
+
+    <table align=center width=700px>
+       <tr>
+        <td align=center width=100px>
+        <center>
+        <span style="font-size:20px"><sup>1</sup> Carnegie Mellon University <br/> <sup>2</sup> Facebook AI Research</span>
+        </center>
+        </td>
+     </tr>
+    </table>
+
+    <br>
+    <table align=center width=400px>
+     <tr>
+       <td align=center width=100px>
+       <center>
+       <span style="font-size:20px"><a href="https://tejaskhot.github.io/static/docs/unmvs.pdf">[Paper]</a></span>
+       </center>
+       </td>
+
+      <!-- <td align=center width=100px>
+      <center>
+      <span style="font-size:20px"><a href="https://youtu.be/cYHQKtBLI3Q">[Video]</a></span>
+      </center>
+      </td> -->
+
+      <td align=center width=100px>
+      <center>
+      <span style="font-size:20px"><a href="https://github.com/tejaskhot/unsup_mvs">[Code]</a></span>
+      </center>
+      </td>
+
+   </tr>
+  </table>
+
+            <br>
+            <br>
+            <table align=center width=600px>
+                <tr>
+                    <td width=600px>
+                      <center>
+                          <a href="./resources/images/teaser.png"><img src = "./resources/images/teaser.png" height="250px"></img></href></a><br>
+                    </center>
+                    </td>
+                </tr>
+                    <td width=600px>
+                      <center>
+                          <span style="font-size:14px"><i>Our model consumes a collection of calibrated images of a scene from multiple views and produces depth maps for every such view. We show that this depth prediction model can be trained in an unsupervised manner using our robust photo consistency loss. The predicted depth maps are then fused together into a consistent 3D reconstruction which closely resembles and often improves upon the sensor scanned model. Left to Right: Input images, predicted depth maps, our fused 3D reconstruction, ground truth 3D scan.</i>
+                    </center>
+                    </td>
+                </tr>
+            </table>
+
+            <br>
+            We present a learning based approach for multi-view stereopsis (MVS). While current deep MVS methods achieve impressive results, they crucially rely on ground-truth 3D training data, and acquisition of such precise 3D geometry for supervision is a major hurdle. Our framework instead leverages photometric consistency between multiple views as supervisory signal for learning depth prediction in a wide baseline MVS setup.  However, naively applying photo consistency constraints is undesirable due to occlusion and lighting changes across views. To overcome this, we propose a robust loss formulation that: a) enforces first order consistency and b) for each point, selectively enforces consistency with some views, thus implicitly handling occlusions. We demonstrate our ability to learn MVS without 3D supervision using a real dataset,
+            and show that each component of our proposed robust loss results in a significant improvement.
+            We qualitatively observe that our reconstructions are often more complete than the acquired ground truth, further showing the merits of this approach.
+            Lastly, our learned model generalizes to novel settings, and our approach allows adaptation of existing CNNs to datasets without ground-truth 3D by unsupervised finetuning.
+            <br><br>
+          <hr>
+         <!-- <table align=center width=550px> -->
+            <table align=center width=800>
+             <center><h1>Paper</h1></center>
+                <tr>
+                    <!--<td width=300px align=left>-->
+                    <!-- <a href="http://arxiv.org/pdf/1603.08511.pdf"> -->
+                  <!-- <td><a href="#"><img class="layered-paper-big" style="height:175px" src="./resources/images/paper.png"/></a></td> -->
+                  <td><a href="https://tejaskhot.github.io/static/docs/unmvs.pdf"><img style="height:300px" src="./resources/images/paper.png"/></a></td>
+                  <td><span style="font-size:14pt">Khot*, Agrawal*, Tulsiani, Mertz, Lucey, Hebert<br><br>
+                          Learning Unsupervised Multi-View Stereopsis via Robust Photometric Consistency<br><br>
+                  <br><br>
+                      <a href="https://tejaskhot.github.io/static/docs/unmvs.pdf">[pdf]</a> &nbsp; &nbsp;
+                      <a href="./resources/bibtex.txt">[Bibtex]</a>
+                  <!-- [hosted on <a href="#">arXiv</a>]</a> -->
+                    </td>
+              </tr>
+            </table>
+          <br>
+
+                <hr>
+                <center><h1>Overview and Results</h1></center>
+                <table align=center width=900px>
+                    <tr>
+                        <td width=600px>
+                          <center>
+                            <a href='https://github.com/tejaskhot/unsup_mvs'><img class="round" style="height:250" src="./resources/images/network.png"/></a>
+                          </center>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width=600px>
+                          <center>
+                            <a href='https://github.com/tejaskhot/unsup_mvs'><img class="round" style="height:250" src="./resources/images/loss.png"/></a>
+                          </center>
+                        </td>
+                    </tr>
+                </table>
+                <br>
+                <hr>
+
+         <center><h1>Code</h1></center>
+            <table align=center width=1000px>
+                <tr>
+                        <center>
+                          <a href='https://github.com/tejaskhot/unsup_mvs'><img class="round" style="height:250" src="./resources/images/tempo.png"/></a>
+                        </center>
+              </tr>
+          </table>
+
+            <table align=center width=800px>
+              <tr><center> <br>
+                <span style="font-size:28px">&nbsp;<a href='https://github.com/tejaskhot/unsup_mvs'>[GitHub]</a>
+
+                <span style="font-size:28px"></a></span>
+              <br>
+              </center></tr>
+          </table>
+            <br>
+          <hr>
+
+
+            <table align=center width=1100px>
+                <tr>
+                    <td>
+                      <left>
+                <center><h1>Acknowledgements</h1></center>
+                This project is supported by Carnegie Mellon University's Mobility21 National University Transportation Center, which is sponsored by the US Department of Transportation. This webpage template was borrowed from some <a href="https://richzhang.github.io/colorization/">colorful folks</a>.
+            </left>
+        </td>
+        </tr>
+        </table>
+
+        <br><br>
+</body>
+</html>
