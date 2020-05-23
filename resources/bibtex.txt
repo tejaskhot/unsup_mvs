@@ -1,0 +1,6 @@
+@article{khot2019learning,
+  title={Learning Unsupervised Multi-View Stereopsis via Robust Photometric Consistency},
+  author={Khot, Tejas and Agrawal, Shubham and Tulsiani, Shubham and Mertz, Christoph and Lucey, Simon and Hebert, Martial},
+  journal={arXiv preprint arXiv:1905.02706},
+  year={2019}
+}
