@@ -26,11 +26,11 @@ source image may not be visible across all other views.
 ### Implementation
 The predicted depth map from the
 network, along with the reference image are used to warp
-and calculate a loss map for each of $M$ non-reference neighboring views. These $M$ loss maps are then concatenated into a volume of dimension $H×W×M$,
-where $H$ and $W$ are the image dimensions. This volume is
-used to perform a pixel-wise selection to pick the $K$ “best”
+and calculate a loss map for each of M non-reference neighboring views. These M loss maps are then concatenated into a volume of dimension H × W × M,
+where H and W are the image dimensions. This volume is
+used to perform a pixel-wise selection to pick the K “best”
 (lowest loss) values, along the 3rd dimension of the volume
-(i.e. over the $M$ loss maps), using which we take the mean
+(i.e. over the M loss maps), using which we take the mean
 to compute our robust photometric loss.
 
 ![loss](resources/loss.png)
@@ -44,7 +44,9 @@ Pre-trained model weights and outputs (depth maps, point clouds, 3D ply files) f
 
 To check out the source code:
 
-```git clone https://github.com/tejaskhot/unsup_mvs/```. 
+```
+git clone https://github.com/tejaskhot/unsup_mvs/
+``` 
 
 Install CUDA 9.0, CUDNN 7.0 and Python 2.7. Please note that this code has not been tested with other versions and may likely need changes for running with different versions of libraries. This code is also not optimized for multi-GPU execution.
 
